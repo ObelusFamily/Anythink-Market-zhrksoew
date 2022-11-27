@@ -70,7 +70,9 @@ const mapDispatchToProps = (dispatch) => ({
 });
 
 const MainView = (props) => {
-  return props.itemsCount ? (
+  return props.searchValue.length > 2 && !props.itemsCount ? (
+    <div id="empty">No items found</div>
+  ) : (
     <div>
       <div className="feed-toggle">
         <ul className="nav nav-tabs">
@@ -93,8 +95,6 @@ const MainView = (props) => {
         currentPage={props.currentPage}
       />
     </div>
-  ) : (
-    <div id="empty">No items found</div>
   );
 };
 
