@@ -42,8 +42,8 @@ const Banner = (props) => {
               get
             </span>
           </span>
-          {showInput && (
-            <div id="search-box">
+          {/* {showInput && ( */}
+            <div id="search-box" hidden={!showInput}>
               <input
                 type="text"
                 placeholder="What is that you truly desire"
@@ -51,7 +51,7 @@ const Banner = (props) => {
                 onChange={handleChange}
               />
             </div>
-          )}
+          {/* )} */}
           <span> the cool stuff.</span>
         </div>
       </div>
