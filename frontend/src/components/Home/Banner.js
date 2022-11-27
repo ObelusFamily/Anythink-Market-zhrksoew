@@ -23,6 +23,7 @@ const Banner = (props) => {
       const payload = await agent.Items.all();
       props.onSearch(payload);
     }
+    props.handler(title);
   };
 
   return (
