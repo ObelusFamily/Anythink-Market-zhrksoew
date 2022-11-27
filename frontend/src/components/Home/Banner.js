@@ -10,6 +10,7 @@ const mapDispatchToProps = (dispatch) => ({
 
 const Banner = (props) => {
   const [value, setValue] = useState("");
+  const [showInput, setInputVisiblity] = useState(false);
 
   const handleChange = async (e) => {
     const title = e.target.value;
@@ -26,19 +27,31 @@ const Banner = (props) => {
     props.handler(title);
   };
 
+  const handleClickGet = () => {
+    setInputVisiblity(true);
+  };
+
   return (
     <div className="banner text-white">
       <div className="container p-4 text-center">
         <img src={logo} alt="banner" />
         <div>
-          <span id="get-part">A place to get</span>
-          <input
-            type="text"
-            placeholder="What is that you truly desire"
-            id="search-box"
-            value={value}
-            onChange={handleChange}
-          />
+          <span id="get-part">
+            A place to{" "}
+            <span id="get" onClick={handleClickGet}>
+              get
+            </span>
+          </span>
+          {showInput && (
+            <div id="search-box">
+              <input
+                type="text"
+                placeholder="What is that you truly desire"
+                value={value}
+                onChange={handleChange}
+              />
+            </div>
+          )}
           <span> the cool stuff.</span>
         </div>
       </div>
