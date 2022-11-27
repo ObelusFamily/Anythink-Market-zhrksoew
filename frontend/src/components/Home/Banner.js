@@ -42,15 +42,14 @@ const Banner = (props) => {
               get
             </span>
           </span>
-          {showInput && (
-            <input
-              type="text"
-              placeholder="What is that you truly desire"
-              id="search-box"
-              value={value}
-              onChange={handleChange}
-            />
-          )}
+          <input
+            hidden={!showInput}
+            type="text"
+            placeholder="What is that you truly desire"
+            id="search-box"
+            value={value}
+            onChange={handleChange}
+          />
           <span> the cool stuff.</span>
         </div>
       </div>
